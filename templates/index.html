@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>File Upload & Image Preview</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .block{
+            margin-left: 150px ;
+            margin-right: 150px ;
+            
+        }
+
+        .jumbotron-image {
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);
+            }
+
+        
+    </style>
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+
+    <br>
+    <!-- Upload  -->
+    <form action="/output" method="post" enctype="multipart/form-data">
+        <div class="container">
+            <div class="col-md-10 offset-md-1 ">
+                <div class="jumbotron jumbotron-image">
+                    <h4 class="display-6">Système d’indexation et de recherche d’images par le contenu </h4>
+                        <div class="lead font-italic">Réalisé par: DAHDOUH MOUAD   </div>
+                        
+                    
+                    <hr class="mt-2 my-4">
+                    <h4 class="display-6">Select image</h4>
+                    <div class="block">
+                        <div>
+                            
+                            <input type="file" name="image" accept="image/png, image/jpeg">
+                            <select   style="width: 130px;" name="check">
+                                <option value="car_side" selected>car</option>
+                                <option value="airplanes">airplanes</option>
+                                <option value="cannon">cannon</option>
+                                <option value="ceiling_fan">ceiling_fan</option>
+                                <option value="accordion">accordion</option>
+                                <option value="anchor">anchor</option>
+                                <option value="barrel">barrel</option>
+                                <option value="bass">bass</option>
+                                <option value="beaver">beaver</option>
+                                <option value="binocular">binocular</option>
+                                <option value="bonsai">bonsai</option>
+                                <option value="camera">camera</option>
+                                <option value="cellphone">cellphone</option>
+                                <option value="chair">chair</option>
+                                <option value="cougar_body">cougar_body</option>
+                                <option value="crab">crab</option>
+                                <option value="cup">cup</option>
+                            </select>
+    
+                        </div>
+                        <div>
+    
+                        </div>
+                        <div class="mt-2">
+                            <input type="submit" value="Search" name="submit" class="btn btn-lg btn-primary pull-right">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+
+    </form>
+
+
+</body>
+
+</html>

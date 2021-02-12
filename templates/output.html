@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Similar Images</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css')}}"/>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h2> Query Image </h2>
+<br>
+<div align="center">
+ <img src="{{ query_image }}" alt="query image" width="300" height="300">
+ <div><input class="btn btn-success" type="button" value="See more" onclick="showDiv()" /></div>
+</div>
+<h2> Similar images </h2>
+<br>
+<div align="center">
+<div>
+{% for img in similar_images3 %}
+<img src="../static/results/{{img}}" width="400" height="400">
+
+{% endfor %}
+</div>
+
+
+<div id="myDiv"  style="display:none;">
+    {% for img in similar_imagest %}
+    <img src="..\static\results\{{img}}" alt="similar image" width="400" height="400">
+
+    {% endfor %}
+</div>
+
+</div>
+  <script type="text/javascript">
+      function showDiv() {
+      console.log("DDDD");
+    document.getElementById("myDiv").style.display = "";
+    document.getElementById("Div").style.display = "none";
+    }
+  </script>
+  
+    <script type="text/javascript" src=" {{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+  <script  type="text/javascript" src=" {{ url_for('static', filename='js/script.js') }}" ></script>
+
+
+</body>
+</html>
